@@ -1,2 +1,31 @@
-# IRR-Calculator
-Utilize this code to calculate the IRR of an investment with multiple cash flows.
+# IRR Calculator
+
+## Description
+This Java program implements an Internal Rate of Return (IRR) calculator. IRR is a financial metric used to estimate the profitability of an investment. It represents the rate at which the net present value of cash flows from an investment becomes zero. A higher IRR typically signifies a more profitable investment compared to the company's cost of capital.
+
+## How to Use
+1. Run the Java application.
+2. The GUI interface will prompt you to enter the initial cost and the number of cash flows.
+3. Upon entering the necessary information, click the "Calculate IRR" button.
+4. Subsequently, a series of dialogs will request the user to input cash flow values for each period.
+5. After inputting the cash flows, the program will compute the IRR.
+6. The IRR result will be displayed in a dialog box.
+7. Finally, a "Thank you" message will be displayed, and the program will exit.
+
+## Instructions
+- The application uses Swing for the graphical user interface (GUI) and accepts user input through dialog boxes.
+- Ensure to enter numerical values when prompted.
+- The IRR calculation is performed based on the cash flow values provided by the user and the initial cost.
+
+## Author
+This program was created by Tiya Shah.
+
+## Version
+Version: December 9, 2023
+
+## Requirements
+- Java Development Kit (JDK) to compile and run the code.
+- An Integrated Development Environment (IDE) such as Eclipse or IntelliJ IDEA can be used for easier execution and modification of the code.
+
+## Note
+- The code is a basic implementation for educational purposes and may not cover all edge cases or error handling scenarios.
