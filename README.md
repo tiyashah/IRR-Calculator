@@ -6,7 +6,7 @@ This Java program implements an Internal Rate of Return (IRR) calculator. IRR is
 ![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/5b08ff24-4c70-43b0-9395-d78372d10018)
 ![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/3e7f3afe-28c6-4447-9171-03f163a7502e)
 ![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/90d0de36-e3f7-4312-b132-8c89817a291b)
-
+![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/79efe56c-ff99-4606-b9c8-e0a3d9c6fe4d)
 
 *Exiting application*
 
