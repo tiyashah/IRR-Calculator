@@ -14,9 +14,9 @@ import java.util.ArrayList;
 public class IRRCalculator extends JFrame {
     private static final ArrayList<Integer> cashFlows = new ArrayList<>();
     private static int cost = 0;
+    public JButton calculate = new JButton("Calculate IRR");
     private final JTextField costInput;
     private final JTextField nInput;
-    public JButton calculate = new JButton("Calculate IRR");
 
     public IRRCalculator() {
         setTitle("IRR Calculator");
@@ -96,6 +96,7 @@ public class IRRCalculator extends JFrame {
         c.gridx = 0;
         c.gridy = 4;
         c.weighty = 0.25;
+        calculate.setBackground(Color.white);
         rightPanel.add(calculate, c);
         rightPanel.setBackground(Color.black);
 
@@ -120,32 +121,45 @@ public class IRRCalculator extends JFrame {
         calculate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int numCashFlows = Integer.parseInt(nInput.getText());
-                cost = Integer.parseInt(costInput.getText());
-                int cf = 0;
-                for (int i = 1; i <= numCashFlows; i++) {
-                    cf = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter cash flow " + i, "IRR Calculator",
-                            JOptionPane.QUESTION_MESSAGE));
-                    cashFlows.add(cf);
-                }
-
-                double irr = 0;
-                double temp = 0;
-                for (double i = 0; i < 1.0; i += 0.00000001) {
-                    for (int x = 1; x <= cashFlows.size(); x++) {
-                        temp += ((double) cashFlows.get(x - 1) / Math.pow(1.0 + i, x));
+                try {
+                    int numCashFlows = Integer.parseInt(nInput.getText());
+                    cost = Integer.parseInt(costInput.getText());
+                    int cf = 0;
+                    for (int i = 1; i <= numCashFlows; i++) {
+                        cf = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter cash flow " + i, "IRR Calculator",
+                                JOptionPane.QUESTION_MESSAGE));
+                        cashFlows.add(cf);
                     }
 
-                    if (Math.abs(temp - cost) < 0.000001) {
-                        irr = i;
-                        break;
+                    double irr = 0;
+                    double temp = 0;
+                    for (double i = 0; i < 1.0; i += 0.00000001) {
+                        for (int x = 1; x <= cashFlows.size(); x++) {
+                            temp += ((double) cashFlows.get(x - 1) / Math.pow(1.0 + i, x));
+                        }
+
+                        if (Math.abs(temp - cost) < 0.000001) {
+                            irr = i;
+                            break;
+                        }
+                        temp = 0.0;
                     }
-                    temp = 0.0;
+                    String irrDisplayed = String.format("%.4f", irr * 100.0);
+                    JOptionPane.showMessageDialog(null, "The IRR of this investment is " + irrDisplayed + "%", "IRR Calculator", JOptionPane.INFORMATION_MESSAGE);
+
+                    int option = JOptionPane.showConfirmDialog(null, "Thank you for using Tiya's IRR Calculator\n                           Exit?", "IRR Calculator",
+                            JOptionPane.YES_NO_OPTION);
+
+                    if (option == 0) {
+                        System.exit(0);
+                    } else {
+                        costInput.setText("");
+                        nInput.setText("");
+                    }
+                } catch (Exception any) {
+                    JOptionPane.showMessageDialog(null, "Please enter a valid number.", "IRR Calculator", JOptionPane.ERROR_MESSAGE);
                 }
-                String irrDisplayed = String.format("%.4f", irr * 100.0);
-                JOptionPane.showMessageDialog(null, "The IRR of this investment is " + irrDisplayed + "%", "IRR Calculator", JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Thank you for using Tiya's IRR Calculator", "IRR Calculator", JOptionPane.INFORMATION_MESSAGE);
-                System.exit(0);
+
             }
         });
     }
