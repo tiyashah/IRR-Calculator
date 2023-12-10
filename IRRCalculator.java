@@ -147,7 +147,7 @@ public class IRRCalculator extends JFrame {
                     String irrDisplayed = String.format("%.4f", irr * 100.0);
                     JOptionPane.showMessageDialog(null, "The IRR of this investment is " + irrDisplayed + "%", "IRR Calculator", JOptionPane.INFORMATION_MESSAGE);
 
-                    int option = JOptionPane.showConfirmDialog(null, "Thank you for using Tiya's IRR Calculator\n                           Exit?", "IRR Calculator",
+                    int option = JOptionPane.showConfirmDialog(null, "Thank you for using Tiya's IRR Calculator\n                         Exit?", "IRR Calculator",
                             JOptionPane.YES_NO_OPTION);
 
                     if (option == 0) {
