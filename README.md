@@ -3,6 +3,13 @@
 ## Description
 This Java program implements an Internal Rate of Return (IRR) calculator. IRR is a financial metric used to estimate the profitability of an investment. It represents the rate at which the net present value of cash flows from an investment becomes zero. A higher IRR typically signifies a more profitable investment compared to the company's cost of capital.
 
+![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/5b08ff24-4c70-43b0-9395-d78372d10018)
+![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/3e7f3afe-28c6-4447-9171-03f163a7502e)
+![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/90d0de36-e3f7-4312-b132-8c89817a291b)
+![image](https://github.com/tiyashah/IRR-Calculator/assets/133288865/68849efc-e910-4612-9797-6e4509fd62b5)
+
+
+
 ## How to Use
 1. Run the Java application.
 2. The GUI interface will prompt you to enter the initial cost and the number of cash flows.
